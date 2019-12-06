@@ -22,10 +22,19 @@ def solution_1_2_1(l):
     return result
 
 
-# recursive
+# half recursive
 def solution_1_2_2(l):
     def fuel_for_item(mass):
         fuel = math.floor(mass / 3) - 2
         return 0 if fuel <= 0 else fuel + fuel_for_item(fuel)
 
     return seq(l).map(lambda x: fuel_for_item(x)).sum()
+
+
+# full recursive
+def solution_1_2_3(l):
+    def fuel_for_item(mass):
+        fuel = math.floor(mass / 3) - 2
+        return 0 if fuel <= 0 else fuel + fuel_for_item(fuel)
+
+    return 0 if len(l) == 0 else fuel_for_item(l[-1]) + solution_1_2_2(l[:-1])

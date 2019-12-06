@@ -15,3 +15,8 @@ class Day12Tests(unittest.TestCase):
         self.assertEqual(solution_1_2_2([14]), 2)
         self.assertEqual(solution_1_2_2([1969]), 966)
         self.assertEqual(solution_1_2_2([100756]), 50346)
+
+    def test_solution_1_2_3(self):
+        self.assertEqual(solution_1_2_3([14]), 2)
+        self.assertEqual(solution_1_2_3([1969]), 966)
+        self.assertEqual(solution_1_2_3([100756]), 50346)
